@@ -1,0 +1,37 @@
+.contenu{
+    height: 100%;
+}
+mat-form-field{
+    width: 400px;
+}
+mat-card-title{
+    text-align: center;
+    color:red;
+}
+
+.example-form {
+    position:absolute;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow:3px 3px 3px 0 red;
+    border-radius:8px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

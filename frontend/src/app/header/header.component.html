@@ -1,0 +1,46 @@
+ 
+<mat-toolbar fixed-top scrolling-navbar color="warn" class="header">
+  <button mat-button mat-stroked-button color="basic" style="cursor:pointer" (click)="onBackToParts()">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-button *ngIf="part === 1 || (part >= 3 && isAuth)"  routerLink="/{{ partString }}/all-stuff" routerLinkActive="active">
+    <mat-icon>assignments</mat-icon>
+    Assignments
+  </button>
+  <button mat-button *ngIf="part === 1 || (part >= 3 && isAuth)" routerLink="/{{ partString }}/new-prof" routerLinkActive="active">
+    <mat-icon>people</mat-icon>
+    Les Profs
+  </button>
+  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+    <mat-icon>assignment_turned_in</mat-icon>
+    Les Rendu
+  </button>
+  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+    <mat-icon>assignment_late</mat-icon>
+    Les Retards
+  </button>
+  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+    <mat-icon>person</mat-icon>
+    Details User
+  </button>
+  <button mat-button mat-stroked-button color="basic"  *ngIf="(part >= 3 && !isAuth)"  routerLink="/{{ partString }}/auth/login" routerLinkActive="active">
+    <mat-icon>login</mat-icon>
+    Sign In
+  </button>
+  <button mat-button mat-stroked-button color="basic" *ngIf="(part >= 3 && !isAuth)"  routerLink="/{{ partString }}/auth/signup" routerLinkActive="active">
+    <mat-icon>logout</mat-icon>
+    Sign Up
+  </button>
+  <button mat-button mat-stroked-button color="basic" *ngIf="(part >= 3 && isAuth)"   style="cursor: pointer" (click)="onLogout()">
+    <mat-icon>logout</mat-icon>
+    Sign Out
+  </button>
+</mat-toolbar>
+
+<div class="hero-image" *ngIf="mode === 'list'">
+  <h2 class="hero-text">
+
+  </h2>
+</div>

@@ -1,0 +1,31 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+
+<div class="col-sm-4 offset-sm-4 mt-4"  *ngIf="!loading">
+  <form [formGroup]="signupForm" class="example-form" fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">  
+    <mat-card-title>Veillez vous Inscrire</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Saisir Email</mat-label>
+        <input  matInput placeholder="Saisir Email" id="email" required  formControlName="email" autocomplete="off" />
+        <mat-error *ngIf="email.invalid">{{getErroremailMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Saisir Mot de Passe</mat-label>
+        <input matInput placeholder="Saisir Mot de Passe" [type]="hide ? 'password' : 'text'" id="password"  formControlName="password"/>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.invalid">{{getErrorpasswordMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="onSignup()" [disabled]="signupForm.invalid" class="example-full-width">Inscription</button>
+    </mat-card-actions> 
+  </mat-card> 
+  </form>
+  <p>{{ errorMessage }}</p>
+</div>
+

@@ -1,0 +1,23 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+mat-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.material-icons {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.copy{
+  text-align: center;
+  padding: 10px;
+}
+

@@ -1,0 +1,31 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div class="container">
+  <div *ngIf="!loading" class="contenu">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ assignment?.nom }}</mat-card-title>
+      </mat-card-header>
+
+      <img mat-card-image src="{{ assignment?.imageUrl }}" />
+      <mat-card-content>
+        <h6>
+          Attribuer à: {{ assignment?.auteur}}
+        </h6>
+        <p>Remarques : {{ assignment?.remarques }}</p>
+        <div *ngIf="assignment.note">
+          <p>Tp rendu,  Note : {{ assignment?.note }}/20</p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="basic" (click)="onGoBack()"> Retour</button>
+        <button mat-stroked-button color="primary" (click)="onModify()"
+            [disabled]="part >= 3 && userId !== assignment?.userId">Modifier</button>
+          <button mat-stroked-button color="warn" (click)="onDelete()"
+            [disabled]="part >= 3 && userId !== assignment?.userId">Supprimer</button>
+          <button *ngIf="!assignment.note" mat-stroked-button color="primary"(click)="onNote()"
+            [disabled]="part >= 3 && userId !== assignment?.userId">Noter</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

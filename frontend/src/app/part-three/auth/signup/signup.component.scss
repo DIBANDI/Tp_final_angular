@@ -1,0 +1,35 @@
+
+mat-form-field{
+    width: 400px;
+}
+mat-card-title{
+    text-align: center;
+    color:red;
+}
+
+
+  .example-form {
+    margin-top: 25px;
+    min-width: 300px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow:3px 3px 3px 0 red;
+    border-radius:8px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
