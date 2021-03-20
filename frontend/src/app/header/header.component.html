@@ -5,35 +5,37 @@
     Home
   </button>
   <span class="example-spacer"></span>
-  <button mat-button *ngIf="part === 1 || (part >= 3 && isAuth)"  routerLink="/{{ partString }}/all-stuff" routerLinkActive="active">
+  <button mat-button *ngIf="gestion === 1  && isAuth"  routerLink="/{{ partString }}/assignment" routerLinkActive="active">
     <mat-icon>assignments</mat-icon>
     Assignments
   </button>
-  <button mat-button *ngIf="part === 1 || (part >= 3 && isAuth)" routerLink="/{{ partString }}/new-prof" routerLinkActive="active">
-    <mat-icon>people</mat-icon>
-    Les Profs
-  </button>
-  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+  <button mat-button  *ngIf="gestion === 1  && isAuth"  routerLink="/{{ partString }}/rendu" routerLinkActive="active">
     <mat-icon>assignment_turned_in</mat-icon>
-    Les Rendu
+    Les Rendus
   </button>
-  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+  <button mat-button  *ngIf="gestion === 1  && isAuth"  routerLink="/{{ partString }}/retard" routerLinkActive="active">
     <mat-icon>assignment_late</mat-icon>
     Les Retards
   </button>
-  <button mat-button  *ngIf="part === 1 || (part >= 3 && isAuth)">
+  <button mat-button *ngIf="gestion === 1  && isAuth" routerLink="/{{ partString }}/prof" routerLinkActive="active">
+    <mat-icon>people</mat-icon>
+    Les Profs
+  </button>
+
+
+  <button mat-button  *ngIf="gestion === 1  && isAuth">
     <mat-icon>person</mat-icon>
     Details User
   </button>
-  <button mat-button mat-stroked-button color="basic"  *ngIf="(part >= 3 && !isAuth)"  routerLink="/{{ partString }}/auth/login" routerLinkActive="active">
+  <button mat-button mat-stroked-button color="basic"  *ngIf="gestion === 1  && !isAuth" routerLink="/{{ partString }}/auth/login" routerLinkActive="active">
     <mat-icon>login</mat-icon>
     Sign In
   </button>
-  <button mat-button mat-stroked-button color="basic" *ngIf="(part >= 3 && !isAuth)"  routerLink="/{{ partString }}/auth/signup" routerLinkActive="active">
+  <button mat-button mat-stroked-button color="basic" *ngIf="gestion === 1  && !isAuth"  routerLink="/{{ partString }}/auth/signup" routerLinkActive="active">
     <mat-icon>logout</mat-icon>
     Sign Up
   </button>
-  <button mat-button mat-stroked-button color="basic" *ngIf="(part >= 3 && isAuth)"   style="cursor: pointer" (click)="onLogout()">
+  <button mat-button mat-stroked-button color="basic" *ngIf="gestion === 1  && isAuth"   style="cursor: pointer" (click)="onLogout()">
     <mat-icon>logout</mat-icon>
     Sign Out
   </button>

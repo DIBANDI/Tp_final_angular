@@ -24,7 +24,7 @@ export class AuthService {
           () => {
             this.login(email, password).then(
               () => {
-                resolve();
+                resolve(true);
               }
             ).catch(
               (error) => {
@@ -49,7 +49,7 @@ export class AuthService {
             this.token = authData.token;
             this.userId = authData.userId;
             this.isAuth$.next(true);
-            resolve();
+              resolve(true);
           },
           (error) => {
             reject(error);

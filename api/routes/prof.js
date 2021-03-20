@@ -3,14 +3,14 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
-const profControlleur = require('../controllers/stuff');
+const profController = require('../controllers/prof');
 
 //definition des routes pour acceder aux routes 
-router.get('/', auth, profControlleur.getAllProf);
-router.post('/', auth, multer, profControlleur.createProf);
-router.get('/:id', auth, profControlleur.getOneProf);
-router.put('/:id', auth, multer, profControlleur.modifyProf);
-router.delete('/:id', auth, profControlleur.deleteProf);
+router.get('/', auth, profController.getAllProf);
+router.post('/', auth, multer, profController.createProf);
+router.get('/:id', auth, profController.getOneProf);
+router.put('/:id', auth, multer, profController.modifyProf);
+router.delete('/:id', auth, profController.deleteProf);
 
 //exportation de la route
 module.exports = router;

@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   public mode: string;
-  public part: number;
+  public gestion: number;
   public partString: string;
   public isAuth: boolean;
 
   private modeSub: Subscription;
-  private partSub: Subscription;
+  private gestionSub: Subscription;
   private isAuthSub: Subscription;
 
   constructor(private state: StateService,
@@ -30,18 +30,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.mode = mode;
       }
     );
-    this.partSub = this.state.part$.subscribe(
-      (part) => {
-        this.part = part;
-        switch (part) {
+    this.gestionSub = this.state.gestion$.subscribe(
+      (gestion) => {
+        this.gestion = gestion;
+        switch (gestion) {
           case 1:
-            this.partString = 'part-one';
-            break;
-          case 3:
-            this.partString = 'part-three';
-            break;
-          case 4:
-            this.partString = 'part-four';
+            this.partString = 'gestion';
             break;
           default:
             break;
@@ -66,7 +60,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.modeSub.unsubscribe();
-    this.partSub.unsubscribe();
+    this.gestionSub.unsubscribe();
     this.isAuthSub.unsubscribe();
   }
 
