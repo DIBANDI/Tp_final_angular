@@ -1,30 +1,23 @@
-# assignments
+# Tp sur le rendu des assignements
 
+#*************************** Tp_final_angula ********************************#
 
-#--------------------------------------------  TP ANGULAR  MBDS 2020-2021 -----------------------------------------------
+Veuillez suivre les instructions suivantes pour lancer le projet
 
-Pour lancer le projet il faut:
+1. Veillez cloner le projet dans votre ordinateur avec la commande qui suit:
+	git clone https://github.com/DIBANDI/Tp_final_angular.git
 
-1. cloner le projet via la commande suivante:
-	git clone https://github.com/janssenkoubikani/TP_ANGULAR_KOUBIKANI.git
+2. Apres avoir cloné le projet, vous verez affiché dans le dossier du projet, deux sous dossiers. 
+  Un sous dossier pour la partie frontend, appelé frontend et un autre sous dossier pour la partie backend, appelé api.
 
-2. Une fois le projet télécharger/cloner en local,  vous aurez un dossier qui contient deux sous dossier(api et frontend).
-	- Ouvrez le dossier du projet sur votre éditeur de code
-	- Ouvrir un terminal, aller dans le dossier api et lancer la commande :
-			npm install
-	Après installation des packages, exécutez la commande suivante pour lancer le serveur :
-			nodemon start
-	- Ouvrir un second terminal, aller ensuite dans le dossier frontend et tapez :
-			npm install
-Ensuite exécutez la commande suivante :
-		ng serve --open
-		
-Une page web va s'ouvrir.
+3. Entrez dans chacun de ces sous dossiers avec respectivement les commandes "cd frontend" et "cd api"
 
+4. Une fois dans chacun de ces sous dossiers, tapez la commande "npm install" dans deux invites de commande differentes 
 
+5. Vous avez fini avec le paramettrages, enfin pour lancer l'application, il convient aussi de lancer la partie frontend et la partie backend 
+	- Dans le sous dossier api tapez la commande "npm run serve"
+	- Dans le sous dossier frontend tapez la commande "ng serve --open" cela va ouvrir     automatiquement le navigateur, avec la premiere interface de l'application.
 
-#auteur   janssen KOUBIKANI LOUBOTA    
-					https://github.com/janssenkoubikani/
 	
 	 
 	
