@@ -1,5 +1,10 @@
 # Tp sur le rendu des assignements
 
+Pour faire ce Tp, je me suis inspiré de la formation de la gestion des article sur openclassroom.
+Voici le lien sur la partie frontend:https://openclassrooms.com/fr/courses/4668271-developpez-des-applications-web-avec-angular.
+
+Sur la partie backend : https://openclassrooms.com/fr/courses/6390246-passez-au-full-stack-avec-node-js-express-et-mongodb
+
 #*************************** Tp_final_angula ********************************#
 
 Veuillez suivre les instructions suivantes pour lancer le projet
