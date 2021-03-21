@@ -1,4 +1,15 @@
-.main-pane {
+.text-center{
+  position: relative;
+  border: red solid 5px;
+  border-radius: 15px;
+  height: 70px;
+  width: 830px;
+  background:white;
+  color: red;
+  padding-top:10px;
+}
+
+.conteneur{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -8,23 +19,25 @@
   }
 }
 
-.part-grid {
+.contenu {
   display: flex;
   justify-content: center;
 }
 
-.part {
+.affichage {
   transition: all 0.3s ease-in-out;
   position: relative;
+  border: grey solid 8px;
+  border-radius: 10px;
+  margin: 10px;
   height: 200px;
-  width: 500px;
-
-  background: #2a38b9;
+  width: 400px;
+  background:red;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
   }
-  h1 {
+  h2 {
     color: white;
     position: absolute;
     width: 100%;
@@ -32,7 +45,7 @@
     text-align: center;
     transform: translateY(-50%);
   }
-  h2 {
+  h3 {
     color: white;
     width: 100%;
     top: 50%;

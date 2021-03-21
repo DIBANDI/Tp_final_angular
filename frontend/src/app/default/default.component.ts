@@ -7,13 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent implements OnInit {
-
   constructor(private router: Router) { }
-
   ngOnInit() {
   }
 
-  onNavigate(endpoint: string) {
-    this.router.navigate([endpoint]);
+  onPageNavigate(link: string) {
+    this.router.navigate([link]);
   }
 }
