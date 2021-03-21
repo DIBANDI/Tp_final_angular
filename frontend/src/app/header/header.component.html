@@ -4,7 +4,7 @@
     <mat-icon>home</mat-icon>
     Home
   </button>
-  <span class="example-spacer"></span>
+  <span class="spacer"></span>
   <button mat-button *ngIf="gestion === 1  && isAuth"  routerLink="/{{ partString }}/assignment" routerLinkActive="active">
     <mat-icon>assignments</mat-icon>
     Assignments
@@ -21,8 +21,6 @@
     <mat-icon>people</mat-icon>
     Les Profs
   </button>
-
-
   <button mat-button  *ngIf="gestion === 1  && isAuth">
     <mat-icon>person</mat-icon>
     Details User
@@ -41,8 +39,4 @@
   </button>
 </mat-toolbar>
 
-<div class="hero-image" *ngIf="mode === 'list'">
-  <h2 class="hero-text">
-
-  </h2>
-</div>
+<div class="hero-image" *ngIf="mode === 'list'"></div>

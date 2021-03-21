@@ -1,26 +1,20 @@
+<mat-card class="add"><button mat-raised-button color="warn" (click)="onAdd()"> <mat-icon>add_task</mat-icon>
+  Ajouter un Assignment</button></mat-card>
 <mat-spinner *ngIf="loading"></mat-spinner>
-<mat-card class="add"><button mat-raised-button (click)="onAdd()">Ajouter un Assignment</button></mat-card>
-<div class="container">
 <p class="text-center" *ngIf="assignment.length <= 0 && !loading">Pas d'assignments !</p>
-<div class="stuff-grid" *ngIf="assignment.length >= 0">
-  <div class="assignment-pane" *ngFor="let assignment of assignment" 
->
-    <mat-card class="example-card" *ngIf="!assignment.note">
+<div class="list" *ngIf="assignment.length >= 0">
+  <div class="contenu" *ngFor="let assignment of assignment">
+    <mat-card class="card"  *ngIf=" !assignment.note">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="header-image"></div>
         <mat-card-title>{{ assignment.nom }}</mat-card-title>
       </mat-card-header>
       <img mat-card-image src="{{ assignment.imageUrl }}" />
       <mat-card-content>
-        <p>
-          Attribuer à: {{ assignment.auteur}}
-        </p>
         <div *ngIf="!assignment.note">
-          <p> Tp à rendre le : {{ assignment.dateRendu | date:'dd/MM/yyyy'}}</p>
-      </div>
-        <div *ngIf="assignment.note">
-          <p> Tp rendu</p>
-        </div>
+          <strong>Nom de l'Auteur : {{ assignment.auteur}}</strong>
+          <p> Tp à rendre le  : {{ assignment.dateRenduPrevu | date:'dd/MM/yyyy'}}</p>
+      </div>      
       </mat-card-content>
       <mat-card-actions>
          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="onModify(assignment._id)"><mat-icon>edit</mat-icon></button>
@@ -29,5 +23,4 @@
       </mat-card-actions>
     </mat-card>
  </div>
-</div>
 </div>

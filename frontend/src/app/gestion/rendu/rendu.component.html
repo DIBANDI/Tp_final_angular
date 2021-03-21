@@ -1,22 +1,26 @@
-<mat-spinner *ngIf="loading"></mat-spinner>
 <mat-card class="add">Liste des Assignments deja Evalués</mat-card>
-<div class="container">
+<mat-spinner *ngIf="loading"></mat-spinner>
 <p class="text-center" *ngIf="assignment.length <= 0 && !loading">Pas d'assignments !</p>
-<div class="stuff-grid" *ngIf="assignment.length >= 0">
-  <div class="assignment-pane" *ngFor="let assignment of assignment" 
->
-    <mat-card class="example-card" *ngIf="assignment.note">
+<div class="list" *ngIf="assignment.length >= 0">
+  
+  <div class="contenu" *ngFor="let assignment of assignment">  
+    <mat-card class="card" *ngIf="assignment.note">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="header-image"></div>
         <mat-card-title>{{ assignment.nom }}</mat-card-title>
       </mat-card-header>
       <img mat-card-image src="{{ assignment.imageUrl }}" />
       <mat-card-content>
-        <p>
+        <strong>
           Attribuer à: {{ assignment.auteur}}
-        </p>
-        <div *ngIf="assignment.note">
-          <p> Tp rendu | Votre notes est : {{ assignment.note }} </p>
+        </strong>
+        <div *ngIf=" (assignment.note) && (assignment.dateRenduPrevu | date: 'yMMdd') >= (assignment.dateRenduEnvoye | date: 'yMMdd')">
+          <p> Tp rendu | Votre notes est : {{ assignment.note }} <br/> 
+            Plus 2 points pour le rendu à temps<br>Votre note actuelle est : {{ assignment.note+1 }}  </p>
+        </div>
+        <div *ngIf=" (assignment.note) && (assignment.dateRenduPrevu | date: 'yMMdd') < (assignment.dateRenduEnvoye | date: 'yMMdd')">
+          <p> Tp rendu | Votre notes est : {{ assignment.note }} <br/> 
+              Moins 2 points Pour votre retard<br>Votre note actuelle est : {{ assignment.note-2 }}  </p>
         </div>
       </mat-card-content>
       <mat-card-actions>
@@ -25,6 +29,5 @@
       </mat-card-actions>
     </mat-card>
  </div>
-</div>
 </div>
 

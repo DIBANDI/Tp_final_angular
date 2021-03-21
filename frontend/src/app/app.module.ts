@@ -17,7 +17,8 @@ import { MatButtonModule,
          MatSidenavModule,
          MatToolbarModule,
          MatListModule,
-         MatCardModule
+         MatCardModule,
+         MatGridListModule
         } from '@angular/material';
 import { LoginComponent } from './gestion/auth/login/login.component';
 import { SignupComponent } from './gestion/auth/signup/signup.component';
@@ -68,7 +69,8 @@ import { RetardComponent } from './gestion/retard/retard.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

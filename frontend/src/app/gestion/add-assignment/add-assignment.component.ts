@@ -32,10 +32,9 @@ export class AddAssignmentComponent implements OnInit {
     this.state.mode$.next('form');
     this.assignmentForm = this.formBuilder.group({
       nom: [null, Validators.required],
-      dateRendu: [null, Validators.required],
+      dateRenduPrevu: [null, Validators.required],
       auteur: [null, Validators.required],
       image: [null, Validators.required, mimeType],
-      remarques: [null, Validators.required],
     });
     this.userId = this.auth.userId;
   }
@@ -44,10 +43,9 @@ export class AddAssignmentComponent implements OnInit {
     this.loading = true;
     const assignment = new Assignment();
     assignment.nom = this.assignmentForm.get('nom').value;
-    assignment.dateRendu = this.assignmentForm.get('dateRendu').value;
+    assignment.dateRenduPrevu = this.assignmentForm.get('dateRenduPrevu').value;
     assignment.auteur = this.assignmentForm.get('auteur').value;
     assignment.imageUrl = '';
-    assignment.remarques = this.assignmentForm.get('remarques').value;
     assignment.userId = this.userId;
     this.assignmentService.createNewassignmentWithFile(assignment, this.assignmentForm.get('image').value).then(
       () => {

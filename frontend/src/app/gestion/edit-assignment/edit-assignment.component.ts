@@ -39,10 +39,10 @@ export class EditAssignmentComponent implements OnInit {
             this.assignment = assignment;
             this.assignmentForm = this.formBuilder.group({
               nom: [assignment.nom, Validators.required],
-              dateRendu: [assignment.dateRendu, Validators.required],
+              dateRenduPrevu: [assignment.dateRenduPrevu, Validators.required],
               auteur: [assignment.auteur, Validators.required],
               image: [assignment.imageUrl, Validators.required, mimeType],
-              remarques: [assignment.remarques, Validators.required],
+              remarques: [assignment.remarques],
               note: [assignment.note]
             });
             this.imagePreview = assignment.imageUrl;
@@ -58,7 +58,7 @@ export class EditAssignmentComponent implements OnInit {
     const assignment = new Assignment();
     assignment._id = this.assignment._id;
     assignment.nom = this.assignmentForm.get('nom').value;
-    assignment.dateRendu = this.assignmentForm.get('dateRendu').value;
+    assignment.dateRenduPrevu = this.assignmentForm.get('dateRenduPrevu').value;
     assignment.auteur = this.assignmentForm.get('auteur').value;
     assignment.imageUrl = '';
     assignment.remarques = this.assignmentForm.get('remarques').value;

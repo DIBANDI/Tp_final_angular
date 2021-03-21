@@ -21,12 +21,7 @@ export class RetardComponent implements OnInit {
   private gestionSub: Subscription;
   //public assignments: Assignment;
   public userId: string;
-
   dateactuelle : string = new Date().toDateString();
-
-
-
-
   constructor(private state: StateService,
               private assignmentService: AssignmentService,
               private router: Router,

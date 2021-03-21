@@ -20,12 +20,11 @@ export class RenduComponent implements OnInit {
   private assignmentSub: Subscription;
   private gestionSub: Subscription;
   public userId: string;
-
+  dateactuelle : string = new Date().toDateString();
   constructor(private state: StateService,
               private assignmentService: AssignmentService,
               private router: Router,
               ) { }
-
   ngOnInit() {
     this.loading = true;
     this.state.mode$.next('list');
@@ -42,33 +41,16 @@ export class RenduComponent implements OnInit {
     );
     this.assignmentService.getAssignment();
   }
-
-
-
   onAdd() {
     if (this.gestion === 1) {
       this.router.navigate(['/gestion/add-assignment']);
     } 
   }
-
-
-
   onProductClicked(id: string) {
     if (this.gestion === 1) {
       this.router.navigate(['/gestion/assignment/' + id]);
     } 
   }
-
-
-  /*onGoBack() {
-    if (this.part === 1) {
-      this.router.navigate(['/part-one/all-stuff']);
-    } else if (this.part === 3) {
-      this.router.navigate(['/part-three/all-stuff']);
-    } else if (this.part === 4) {
-      this.router.navigate(['/part-four/all-stuff']);
-    }
-  }*/
 
   onModify(id: string) {
     if (this.gestion === 1) {

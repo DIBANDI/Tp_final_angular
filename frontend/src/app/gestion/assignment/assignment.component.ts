@@ -20,10 +20,7 @@ export class AssignmentComponent implements OnInit {
   public loading: boolean;
   private assignmentSub: Subscription;
   private gestionSub: Subscription;
-  //public assignments: Assignment;
   public userId: string;
-
-
   constructor(private state: StateService,
               private assignmentService: AssignmentService,
               private router: Router,
@@ -45,8 +42,6 @@ export class AssignmentComponent implements OnInit {
     );
     this.assignmentService.getAssignment();
   }
-
-
 
   onAdd() {
     if (this.gestion === 1) {

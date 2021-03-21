@@ -9,29 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class AssignmentService {
 
   constructor(private http: HttpClient) {}
-
-  private assignment: Assignment[] = [
-    {
-      _id: '324sdfmoih3',
-      nom: 'Mon objet',
-      dateRendu: new Date('2021-12-13'),
-      auteur: 'A propos de mon objet',
-      imageUrl: 'https://c.pxhere.com/photos/30/d6/photographer_camera_lens_slr_photography_hands-1079029.jpg!d',
-      remarques: 'A propos de mon objet',
-      note:10,
-      userId: 'will'
-    },
-    {
-      _id: '324sdfmoih4',
-      nom: 'Mon objet 2',
-      dateRendu: new Date('2021-12-13'),
-      auteur: 'A propos de mon objet',
-      imageUrl: 'https://c.pxhere.com/photos/30/d6/photographer_camera_lens_slr_photography_hands-1079029.jpg!d',
-      remarques: 'A propos de mon objet',
-      note:10,
-      userId: 'will'
-    },
-  ];
+  private assignment: Assignment[] = [];
   public assignment$ = new Subject<Assignment[]>();
 
   getAssignment() {

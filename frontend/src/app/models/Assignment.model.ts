@@ -1,7 +1,8 @@
 export class Assignment {
   _id: string;
   nom: string;
-  dateRendu: Date;
+  dateRenduPrevu: Date;
+  dateRenduEnvoye: Date;
   auteur: string;
   imageUrl: string;
   remarques: string;

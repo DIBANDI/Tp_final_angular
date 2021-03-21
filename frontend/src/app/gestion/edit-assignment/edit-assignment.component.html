@@ -11,13 +11,13 @@
             </div>
             <mat-form-field appearance="outline" class="example-full-width" *ngIf="assignment.note"
               style="margin-top: 25px;">
-              <mat-label>Note (/20)</mat-label>
-              <input matInput type="number" id="note" formControlName="note" min="0" autocomplete="off" />
+              <mat-label>Note sur 20</mat-label>
+              <input readonly="readonly" matInput type="number" id="note" formControlName="note" min="0" autocomplete="off" />
             </mat-form-field>
           </div>
           <div class="col-sm-6 mt-1">
             <mat-form-field appearance="outline" class="example-full-width" style="margin-top: 25px;">
-              <mat-label>Modifier le Nom</mat-label>
+              <mat-label>Modifier Intitulé du Tp</mat-label>
               <input matInput type="text" placeholder="Nom du devoir" id="nom" formControlName="nom"
                 autocomplete="off" />
             </mat-form-field>
@@ -26,15 +26,15 @@
               <input matInput type="text" placeholder="Nom etudiant" id="auteur" formControlName="auteur"
                 autocomplete="off" />
             </mat-form-field>
-            <mat-form-field appearance="outline" class="example-full-width">
+            <mat-form-field appearance="outline" class="example-full-width" *ngIf="assignment.note">
               <mat-label>Modifier Remarque</mat-label>
               <textarea matInput name="remarques" id="remarques" formControlName="remarques" autocomplete="off"
                 placeholder="Décrivez votre objet (type, qualité, etc.)"></textarea>
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
               <mat-label>Modifier la Date</mat-label>
-              <input matInput [matDatepicker]="picker" placeholder="Date de rendu" id="dateRendu"
-                formControlName="dateRendu">
+              <input readonly="readonly" matInput [matDatepicker]="picker" placeholder="Date de rendu" id="dateRenduPrevu"
+                formControlName="dateRenduPrevu">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>

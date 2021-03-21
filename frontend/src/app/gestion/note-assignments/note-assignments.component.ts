@@ -17,10 +17,11 @@ export class NoteAssignmentComponent implements OnInit {
   public assignmentForm: FormGroup;
   public assignment: Assignment;
   public loading = false;
-  public part: number;
+  public gestion: number;
   public userId: string;
   public imagePreview: string;
   public errorMessage: string;
+  dateactuelle  = new Date();
 
   constructor(private state: StateService,
               private formBuilder: FormBuilder,
@@ -40,7 +41,7 @@ export class NoteAssignmentComponent implements OnInit {
             this.assignment = assignment;
             this.assignmentForm = this.formBuilder.group({
               nom: [assignment.nom, Validators.required],
-              dateRendu: [assignment.dateRendu, Validators.required],
+              dateRenduPrevu: [assignment.dateRenduPrevu, Validators.required],
               auteur: [assignment.auteur, Validators.required],
               image: [assignment.imageUrl, Validators.required, mimeType],
               remarques: [assignment.remarques, Validators.required],
@@ -59,7 +60,8 @@ export class NoteAssignmentComponent implements OnInit {
     const assignment = new Assignment();
     assignment._id = this.assignment._id;
     assignment.nom = this.assignmentForm.get('nom').value;
-    assignment.dateRendu = this.assignmentForm.get('dateRendu').value;
+    assignment.dateRenduPrevu = this.assignmentForm.get('dateRenduPrevu').value;
+    assignment.dateRenduEnvoye = this.dateactuelle;
     assignment.auteur = this.assignmentForm.get('auteur').value;
     assignment.imageUrl = '';
     assignment.remarques = this.assignmentForm.get('remarques').value;

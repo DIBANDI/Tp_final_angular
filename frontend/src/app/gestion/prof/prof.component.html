@@ -1,21 +1,19 @@
+<mat-card class="add"><button mat-raised-button color="warn" (click)="onAdd()"> <mat-icon>person_add</mat-icon>
+  Ajouter un Prof</button></mat-card>
 <mat-spinner *ngIf="loading"></mat-spinner>
-
-<mat-card class="add"><button mat-raised-button (click)="onAdd()">Ajouter un Assignment</button></mat-card>
-<div class="container">
-<p class="text-center" *ngIf="prof.length <= 0 && !loading">Pas d'enregistrement !</p>
-<div class="stuff-grid" *ngIf="prof.length >= 0">
-  <div class="assignment-pane" *ngFor="let prof of prof" 
->
-    <mat-card class="example-card">
+<p class="text-center" *ngIf="prof.length <= 0 && !loading">Pas de Prof Enregistré !</p>
+<div class="list" *ngIf="prof.length >= 0">
+  <div class="contenu" *ngFor="let prof of prof">
+    <mat-card class="card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{ prof.nom }}</mat-card-title>
+        <mat-card-title></mat-card-title>
       </mat-card-header>
       <img mat-card-image src="{{ prof.imageUrl }}" />
       <mat-card-content>
-        <p>
-          Attribuer à: {{ prof.matiere}}
-        </p>
+        <div>
+          <strong>Nom de l'enseignant est  : {{ prof.nom}}</strong>
+          <p> Matiere : {{ prof.matiere}}</p>
+      </div>      
       </mat-card-content>
       <mat-card-actions>
          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="onModify(prof._id)"><mat-icon>edit</mat-icon></button>
@@ -23,5 +21,4 @@
       </mat-card-actions>
     </mat-card>
  </div>
-</div>
 </div>

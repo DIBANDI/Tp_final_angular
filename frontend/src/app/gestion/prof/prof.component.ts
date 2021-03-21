@@ -12,17 +12,14 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './prof.component.html',
   styleUrls: ['./prof.component.scss']
 })
-export class ProfComponent implements OnInit {
 
+export class ProfComponent implements OnInit {
   public prof: Prof[] = [];
   public gestion: number;
   public loading: boolean;
   private profSub: Subscription;
   private gestionSub: Subscription;
-  //public assignment: Assignment;
   public userId: string;
-
-
   constructor(private state: StateService,
               private profService: ProfService,
               private router: Router,
@@ -45,41 +42,21 @@ export class ProfComponent implements OnInit {
     this.profService.getProf();
   }
 
-
   onAdd() {
     if (this.gestion === 1) {
-      this.router.navigate(['/gestion/new-assignment']);
+      this.router.navigate(['/gestion/add-prof']);
     } 
   }
-
-
 
   onProductClicked(id: string) {
     if (this.gestion === 1) {
-      this.router.navigate(['/gestion/assignment/' + id]);
+      this.router.navigate(['/gestion/prof/' + id]);
     } 
   }
-
-
-  /*onGoBack() {
-    if (this.part === 1) {
-      this.router.navigate(['/part-one/all-stuff']);
-    } else if (this.part === 3) {
-      this.router.navigate(['/part-three/all-stuff']);
-    } else if (this.part === 4) {
-      this.router.navigate(['/part-four/all-stuff']);
-    }
-  }*/
 
   onModify(id: string) {
     if (this.gestion === 1) {
-      this.router.navigate(['/gestion/assignment/' + id]);
-    } 
-  }
-
-  onNote(id: string) {
-    if (this.gestion === 1) {
-      this.router.navigate(['/gestion/assignment/' + id]);
+      this.router.navigate(['/gestion/edit-prof/' + id]);
     } 
   }
 
@@ -97,5 +74,4 @@ export class ProfComponent implements OnInit {
     this.profSub.unsubscribe();
     this.gestionSub.unsubscribe();
   }
-
 }

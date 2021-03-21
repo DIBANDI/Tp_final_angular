@@ -9,21 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProfService {
 
   constructor(private http: HttpClient) {}
-
-  private prof: Prof[] = [
-    {
-      _id: '324sdfmoih3',
-      nom: 'Mon objet',
-      matiere: 'A propos de mon objet',
-      imageUrl: 'https://c.pxhere.com/photos/30/d6/photographer_camera_lens_slr_photography_hands-1079029.jpg!d',
-    },
-    {
-      _id: '324sdfmoih4',
-      nom: 'Mon objet 2',
-      matiere: 'A propos de mon objet',
-      imageUrl: 'https://c.pxhere.com/photos/30/d6/photographer_camera_lens_slr_photography_hands-1079029.jpg!d',
-    },
-  ];
+  private prof: Prof[] = [];
   public prof$ = new Subject<Prof[]>();
 
   getProf() {

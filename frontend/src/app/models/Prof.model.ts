@@ -3,4 +3,5 @@ export class Prof {
     nom: string;
     matiere: string;
     imageUrl: string;
+    userId: string;
   }
