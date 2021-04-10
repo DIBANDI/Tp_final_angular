@@ -23,6 +23,8 @@ Veuillez suivre les instructions suivantes pour lancer le projet
 	- Dans le sous dossier api tapez la commande "npm start"
 	- Dans le sous dossier frontend tapez la commande "ng serve --open" cela va ouvrir     automatiquement le navigateur, avec la premiere interface de l'application.
 
-	
+6. Vous pouvez vous connecter avec :
+   - login : rols@gmail.com
+   - mot de passe : 1234
 	 
 	
