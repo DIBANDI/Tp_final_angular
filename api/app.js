@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 
+app.use(express.static(__dirname + '/dist/tp_final_angular'));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/assignment', assignmentRoutes);
 app.use('/api/prof', profRoutes);
