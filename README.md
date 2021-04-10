@@ -20,7 +20,7 @@ Veuillez suivre les instructions suivantes pour lancer le projet
 4. Une fois dans chacun de ces sous dossiers, tapez la commande "npm install" dans deux invites de commande differentes 
 
 5. Vous avez fini avec le paramettrages, enfin pour lancer l'application, il convient aussi de lancer la partie frontend et la partie backend 
-	- Dans le sous dossier api tapez la commande "npm run serve"
+	- Dans le sous dossier api tapez la commande "npm start"
 	- Dans le sous dossier frontend tapez la commande "ng serve --open" cela va ouvrir     automatiquement le navigateur, avec la premiere interface de l'application.
 
 	

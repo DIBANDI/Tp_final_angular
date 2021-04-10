@@ -21,10 +21,6 @@
     <mat-icon>people</mat-icon>
     Les Profs
   </button>
-  <button mat-button  *ngIf="gestion === 1  && isAuth">
-    <mat-icon>person</mat-icon>
-    Details User
-  </button>
   <button mat-button mat-stroked-button color="basic"  *ngIf="gestion === 1  && !isAuth" routerLink="/{{ partString }}/auth/login" routerLinkActive="active">
     <mat-icon>login</mat-icon>
     Sign In
