@@ -28,9 +28,5 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/assignment', assignmentRoutes);
 app.use('/api/prof', profRoutes);
 app.use('/api/auth', userRoutes);
-app.use(express.static(__dirname, '/dist/tp_final_angular'));
-app.get('/*', function(req,res){
-  res.sendFile(path.join(__dirname+'/dist/tp_final_angular/index.html'));
-})
 
 module.exports = app;
